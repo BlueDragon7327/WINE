@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINE | The only Securly Bypass.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&display=swap');
+
+        :root {
+            --bg-primary: #111;
+            --text-primary: #f4f4f4;
+            --accent-color: #8a4fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+            background: var(--bg-primary);
+            font-family: 'Raleway', sans-serif;
+            cursor: none;
+            color: var(--text-primary);
+        }
+
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(138, 79, 255, 0.3);
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(138, 79, 255, 0.1);
+            mix-blend-mode: color-dodge;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.3s ease;
+        }
+
+        .noise {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .content {
+            max-width: 800px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .content.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2 {
+            font-weight: 100;
+            letter-spacing: -0.1em;
+            background: linear-gradient(45deg, var(--accent-color), #4facff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 20vw;
+            line-height: 0.8;
+        }
+
+        h2 {
+            font-size: 4vw;
+            margin-bottom: 2rem;
+        }
+
+        .step {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(138, 79, 255, 0.1);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            opacity: 0.5;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--accent-color), #4facff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-weight: 200;
+            font-size: 1.2rem;
+            color: rgba(244, 244, 244, 0.7);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <section id="home" class="section">
+        <div class="content">
+            <h1>wine</h1>
+            <div class="subtitle">Wi-Fi Interruption Networking Exploit</div>
+        </div>
+    </section>
+
+    <section id="overview" class="section">
+        <div class="content">
+            <h2>What is WINE?</h2>
+            <p class="subtitle">
+                WINE is a vulnerability found in the extension Securly.
+            </p>
+        </div>
+    </section>
+
+    <section id="steps" class="section">
+        <div class="content">
+            <h2>How to Use</h2>
+            
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Install Extension</h3>
+                <p>Download WINE from your browser's extension store. Simple, one-click installation.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>Initial Configuration</h3>
+                <p>Open extension settings. Configure your network interruption preferences with intuitive sliders.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Automatic Optimization</h3>
+                <p>WINE begins monitoring and optimizing your network connections in real-time.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Advanced Insights</h3>
+                <p>Access detailed network performance reports and granular connection metrics.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            cursorFollower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content').forEach(content => {
+            observer.observe(content);
+        });
+    </script>
+</body>
+</html>
